@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ATM</title>
+    <link href="ATMcss.css" rel="stylesheet" />
+    <script src="ATMcoins.js"></script>  
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div class="container" div="workplace">
+        <h1 style="font-size:50px; margin-left:410px; padding:10px;">ATM</h1>
+        <div class="one-third" id="nlbContainer" >
+            <div class="Logo">
+                <img src="images/th[1].jpg" alt="NLBLOGO" class="logoimage">
+            </div>
+            <img src="images/ATM-Machine[1].jpg" alt="ATMmachine" class="ATMimage">
+
+        </div>
+        <div class="one-third" id="stbContainer" >
+            <div class="Logo">
+                <img src="images/thR3L62TZP.jpg" alt="STBLOGO" class="logoimage">
+            </div>
+            <img src="images/ATM-Machine[1].jpg" alt="ATMmachine" class="ATMimage">
+        </div>
+        <div class="one-third" id="pcbContainer" >
+            <div class="Logo">
+                <img src="images/thA9XPR2O2.jpg" alt="PKBLOGO" class="logoimage">
+            </div>
+            <img src="images/ATM-Machine[1].jpg" alt="ATMmachine" class="ATMimage">
+
+        </div>
+        <div style="font-size:50px; margin-left:300px; padding:10px">Choose your ATM</div>
+        
+     <div class="inputcontainer-one-third" id="nlbInput">
+        <div id="nlbInputContainer">
+            <div id="enterAmount">
+                 <h3>Enter the amount you want to withdraw from the ATM </h3></br>
+                     Enter the amount : <input type="text" id="nlbinputVal" placeholder="Enter the amount....."><br>
+                         <button id="submit" class="btnInput" onclick="numOfcoins();">Submit</button></br>
+            </div>
+                <div id="resaltTransaction">
+                    <div id="resultOfmoney"></div>
+                    <div id="myTableArry">
+                        <div id="mytable">
+                        </div><br />
+                    </div>
+                    <div id="valueInATM"></div>
+                </div><br>
+                <div id="anotherTransition" style="display:none;">
+                    Do you want another transaction: <button id="submitTtansition"   class="btnInput">YES</button><button id="NosubmitTtansition"   class="btnInput">NO</button>
+                </div>
+                <div id="repeatTransaction" style="display:none">
+
+                </div>
+         </div>
+            <div id="questionForATM" style="display:none;">
+                You need to fill ATM:<button id="submitreffel"  class="btnInput">Fill</button>
+            </div>
+            <div class="enterCoinsinATM" id="enterCoinsinATM" style="display:none;">
+                <h1>Pleace Fill ATM</h1>
+                Quantity for 50 <input type="text" id="inputFor50Coin" placeholder="Enter value for 50.." /><button  id="submit50" class="btnInput" onclick="fill50AMT();">E</button><br />
+                Quantity for 10 <input type="text" id="inputFor10Coin" placeholder="Enter value for 10.."/><button id="submit10" class="btnInput" style="display:none;" onclick="fill10AMT()" >E</button><br />
+                Quantity for 5  <input type="text" id="inputFor5Coin" placeholder="Enter value for 5.."/><button id="submit5"  class="btnInput" style="display:none;" onclick="fill5AMT()">E</button><br />
+                Quantity for 2  <input type="text" id="inputFor2Coin" placeholder="Enter value for 2.."/><button id="submit2" class="btnInput" style="display:none;" onclick="fill2AMT();">E</button><br />
+                Quantity for 1  <input type="text" id="inputFor1Coin" placeholder="Enter value for 1.."/><button id="submit1"    class="btnInput"  style="display:none;" onclick="fill1AMT();">E</button><br /><br />
+                
+                <div id="addedValueInATM"></div>
+                <div id="repeatTransactionForFill" style="display:none;" >
+                    Do you want to add money again: 
+                                
+                        <input type="radio" name="gender" value="Yes"   id="boxCheckedForTransaction"  checked="checked"> Yes
+                        <input type="radio" name="gender" value="No"   id="boxNotCheckedForTransaction"> No  
+                          <button id="sumitRadioTransaction" class="btnInput"  onclick="anotherTransaction()">Submit</button>        
+                <br>
+                </div>
+              <br>
+                <div id="inputForMaxAmount" style="display:none;">
+                    Do you want to limit max output from ATM <br>
+                    <form action="">
+                        <input type="radio" name="gender" value="Yes" id="boxChecked" checked="checked"> Yes
+                        <input type="radio" name="gender" value="No" id="boxNotChecked"> No
+                    </form>
+
+                    <button id="limitAmountShow" class="btnInput" onclick="limitAmountShow()" >Submit</button>
+                </div> 
+                        <div  id="enterLimmitAmount"  style="display:none;">
+                          Enter limit amount: <input type="text" id="maxExitAmount"  placeholder="Enter max amount .."/>
+                          <button id="sumitMaxAmount" onclick="limitAmount()";  class="btnInput"  >Submit</button>
+                       </div>
+                
+              
+            </div>
+     </div>
+        
+            <div class="inputcontainer-one-third" id="stbInput">
+                <h3>Enter a value divided by 100 </h3>
+                Enter the amount : <input type="text" id="numOfmoney" placeholder="Enter the amount....."><br>
+                <input type="button" value="Submit" id="submit" onclick="numOfcoins();">
+            </div>
+            <div class="inputcontainer-one-third" id="pcbInput">
+                <h3>Enter a value divided by 50 </h3>
+                Enter the amount : <input type="text" id="numOfmoney" placeholder="Enter the amount....."><br>
+                <input type="button" value="Submit" id="submit" onclick="numOfcoins();">
+            </div>
+    </div>
+    <script src="ATMcoins.js"></script>
+    
+   </body>
+</html>

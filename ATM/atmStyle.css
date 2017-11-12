@@ -1,0 +1,57 @@
+*{
+    padding:0px;
+    margin :0px;
+}
+.container{
+margin: 0 auto;
+width: 1000px;
+background: #bdcfd3;
+height: auto;
+}
+.one-third{
+    padding: 15px;
+    float: left;
+}
+.one-third:hover{
+background: #1d3f46;
+}
+.logoimage{
+    width: 300px;
+    height: 80px;
+}
+.ATMimage{
+    width:300px;
+    height: 300px;
+}
+.inputcontainer{
+    padding: 10px;
+}
+#submit{
+    padding: 5px;
+    background: linear-gradient(#011316,#15a7c4);
+    border: none;
+    margin:5px 5px 5px 0;
+    color: white;
+    box-shadow: 3px 3px 3px #31190b;
+    
+}
+#submit:hover{
+    background: linear-gradient(#15a7c4,#011316);
+    color: white;
+}
+.inputcontainer{
+    
+    background:  #bdcfd3;
+}
+.inputcontainer-one-third{
+float:left;
+width: 300px;
+margin: 5px 0px 5px 13px;
+
+font-size: 15px;
+
+}
+
+
+
+    
