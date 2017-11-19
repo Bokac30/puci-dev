@@ -143,7 +143,7 @@ function fill50AMT() {
    
     };
 }
-
+// input for atm10
 function fill10AMT() {
     var inputAMT10 = parseInt(document.getElementById("inputFor10Coin").value);
     if (inputAMT10 < 0 || isNaN(inputAMT10)){ 
