@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <label for="inputNumber">Enter number to convert to String</label>
+    <input type="text" id="inputNumber" name="inputNumber" maxlength="16" onkeyup="convertToString(this.value)" />
+    <!-- <button id="submit"  onclick="convertToString()">Submit</button> -->
+    <button id="reset" onclick="resetValue()">Reset</button>
+    <div id="result"></div>
+    <script type="text/javascript">
+    //reset values
+        function resetValue(){
+            document.getElementById("inputNumber").value="";
+            document.getElementById("result").innerHTML="";
+        }
+        function convertToString(inputString) {
+           // var inputString = document.getElementById("inputNumber").value;
+            var inputLength = inputString.length;
+            var inputStringToNumber = parseInt(inputString);
+            var moduleInput;
+            var numberInput;
+            var inputStringSplit=(inputString.split(""));
+          
+            var arrayNumToNine=["One","Two","Three","Four","Five","Six","Seven","Eight","Nine"];
+            var arrayNumToNineteen=["Ten","Eleven","Twelve","Thirteen","Fourteen","Fiveteen","Sixteen","Seventeen","Eighteen","Nineteen"];
+            var arrayNumToNinety=["Twenty","Thirty","Forty","Fivety","Sixty","Seventy","Eighty","Ninety"];
+            var arrayNum=["Hundred","Thousand","Milion","Bilion","Trilion","Quadrillion"];
+
+            document.getElementById("result").innerHTML="";
+            
+            if (isNaN(inputString) || inputString == "") {
+                alert("Vnesi validna vrednost");
+                return;
+            };
+            // if first numbers are zeros to ignore them
+            if (inputStringSplit[0]==0){      
+                inputLength=(inputStringToNumber.toString()).length;
+                document.getElementById("inputNumber").value=inputStringToNumber;
+
+            }
+
+            while (inputStringToNumber != 0) {
+                // function for numbers that are equal to 2  +3 strings
+                function InputLength2(arrayIndex){
+                    var numberInputSplit =(inputStringToNumber.toString().split(""));
+                          numberInput = parseInt(inputStringToNumber% Math.pow(10,inputLength-2));
+                          if (numberInputSplit[0]<2){
+                            document.getElementById("result").innerHTML+=arrayNumToNineteen[numberInputSplit[1]] + " " + arrayIndex + " " ;
+                            inputStringToNumber = numberInput;
+                           inputLength=(numberInput.toString()).length;
+                             }
+                            else  if ((numberInputSplit[0]>=2)&& numberInputSplit[1]==0) {
+                                document.getElementById("result").innerHTML+=arrayNumToNinety[numberInputSplit[0]-2] +  " "  + arrayIndex + " ";
+                                inputStringToNumber = numberInput;
+                                inputLength=(numberInput.toString()).length;    
+                           }
+                           else{
+                            document.getElementById("result").innerHTML+=arrayNumToNinety[numberInputSplit[0]-2] +  " " + arrayNumToNine[numberInputSplit[1]-1] + " "  + arrayIndex + " ";
+                                inputStringToNumber = numberInput;
+                                inputLength=(numberInput.toString()).length;   
+                            }
+                }
+              
+                // function for numbers that are equal to 3 +3 strings 
+                function InputLength3(x,arrayIndex){
+                    var numberInputSplit =(inputStringToNumber.toString().split(""));
+                          numberInput = parseInt(inputStringToNumber% Math.pow(10,inputLength-1));
+                          inputLength=(numberInput.toString()).length; 
+                          if (inputLength < x){
+                          document.getElementById("result").innerHTML+=arrayNumToNine[numberInputSplit[0]-1] + " "+ arrayNum[0] + " "  + arrayIndex + " ";          ;
+                          inputStringToNumber = numberInput;
+                          }
+                          else{
+                            document.getElementById("result").innerHTML+=arrayNumToNine[numberInputSplit[0]-1] + " "+ arrayNum[0] + " " ;
+                          inputStringToNumber = numberInput;
+                          }
+                }
+                // function for numbers that are equal to 4 +3 strings 
+                function inputLength4(arrayIndex){
+                    var numberInputSplit =(inputStringToNumber.toString().split(""));
+                          numberInput = parseInt(inputStringToNumber% Math.pow(10,inputLength-1));
+                          document.getElementById("result").innerHTML+=arrayNumToNine[numberInputSplit[0]-1] + " "+ arrayIndex + " " ;          ;
+                          inputStringToNumber = numberInput;
+                          inputLength=(numberInput.toString()).length; 
+
+                }
+                if (inputLength == 1) {
+
+                  
+                    document.getElementById("result").innerHTML += arrayNumToNine[inputStringToNumber - 1];
+                    return;
+                }
+                
+                if (inputLength==2){
+                    InputLength2("");
+                }
+                
+                
+                if (inputLength==3){
+                    InputLength3(1,"")
+                   
+                   
+                }
+                if (inputLength==4 ){
+                     inputLength4(arrayNum[1]);
+                       
+                }
+                if(inputLength==5){
+                    InputLength2(arrayNum[1]);                 
+              
+                }
+                                   
+                  if (inputLength==6){
+                   InputLength3(5,arrayNum[1]);
+                
+                    }
+                 if (inputLength==7){
+                     inputLength4(arrayNum[2]);
+                    
+                     
+                   }
+                  if (inputLength==8){
+                    InputLength2(arrayNum[2]);   
+                 
+                    }
+                    if (inputLength==9){
+                        InputLength3(7,arrayNum[2]);
+                      
+                    }
+                    if (inputLength==10){
+                        inputLength4(arrayNum[3]);
+                       
+                    }
+                    if (inputLength==11){
+                        InputLength2(arrayNum[3]); 
+                  
+                        
+                    }
+                    if(inputLength==12){
+                        InputLength3(10,arrayNum[3]);
+                      
+                    }
+                    if (inputLength==13){
+                        inputLength4(arrayNum[4]);
+                      
+                    }
+                    if (inputLength==14){
+                        InputLength2(arrayNum[4]); 
+                       
+                    }
+                    if (inputLength==15){
+                        InputLength3(13,arrayNum[4]);
+                     
+                    }
+                    if (inputLength==16){
+                        inputLength4(arrayNum[5]);
+                       
+                    }
+
+                    // haw to convert long in js????
+                    if (inputLength==17){
+                        InputLength2(arrayNum[5]); 
+                        
+                    }
+                    if (inputLength==18){
+                        InputLength3(16,arrayNum[4]);
+                        
+                    }
+             }
+        };
+    </script>
+</body>
+</html>
