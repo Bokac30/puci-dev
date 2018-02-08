@@ -1,0 +1,23 @@
+{
+  "name": "pucidev",
+  "version": "1.0.0",
+  "description": "puci test dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bokac30/puci-dev.git"
+  },
+  "keywords": [
+    "puci",
+    "dev"
+  ],
+  "author": "bokac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bokac30/puci-dev/issues"
+  },
+  "homepage": "https://github.com/Bokac30/puci-dev#readme"
+}
